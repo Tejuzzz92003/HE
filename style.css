@@ -36,7 +36,7 @@ body{
 .topbar{
     background:linear-gradient(135deg,#393d52 0%,#9368be 100%);
     color:white;
-    padding:12px 5%;
+   /* padding:12px 5%;*/
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -47,6 +47,8 @@ body{
     backdrop-filter:blur(10px);
     width:100%;
 overflow:hidden;
+padding:12px 15px;
+
 }
 
 .topbar .logo-section{
@@ -552,6 +554,11 @@ footer a{
 
 @media only screen and (max-width: 480px){
 
+
+    html,body{
+    width:100%;
+    overflow-x:hidden;
+}
     .property-section{
         padding:20px 10px;
     }
@@ -602,4 +609,7 @@ footer a{
     flex-wrap:wrap;
     justify-content:center;
     gap:8px;
+}
+*{
+    max-width:100%;
 }
