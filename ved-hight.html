@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harsh Enterprises - Tour Layout</title>
+
+  <style>
+    :root{
+      --green:#2f8b57;
+      --dark:#14453a;
+      --muted:#6b7b78;
+      --card:#ffffff;
+      --bg:#f4f7f6;
+      font-family: 'Segoe UI', Roboto, Arial;
+    
+    }
+    body{
+        margin:0;
+        background:var(--bg);
+        color:#1b2b2a
+    }
+
+    
+    /* MAIN LAYOUT */
+    .container{
+        max-width:1200px;
+        margin:28px auto;
+        display:grid;
+        grid-template-columns:1fr 380px;
+        gap:22px;
+        padding:0 18px;
+    }
+
+    /* LEFT SECTION 
+    .left{
+        background:var(--card);
+        padding:18px;
+        border-radius:10px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.05);
+    }*/
+
+    .gallery{
+        display:flex;
+        gap:18px;
+    }
+    .thumbs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        width:90px;
+    }
+    .thumbs img{
+        width:90px;
+        height:70px;
+        object-fit:cover;
+        border-radius:6px;
+        cursor:pointer;border:2px solid transparent;
+    }
+    .thumbs img.active{
+        border-color:var(--green)}
+
+    .main-img{
+        flex:1;
+        border-radius:10px;
+        overflow:hidden;
+    }
+    .main-img img{
+        width:100%;
+        max-height:520px;
+        object-fit:cover;
+    }
+
+    .title-row{
+        margin-top:14px;
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .package-title{
+        font-size:24px;
+        font-weight:700
+    }
+    .meta{
+        font-size:14px;
+        color:var(--muted)}
+
+    /* RIGHT - BOOKING CARD */
+    .book-card{
+        background:#fff;
+        border-radius:10px;
+        padding:18px;
+        border:1px solid #e2ece9;
+        box-shadow:0 6px 18px rgba(0,0,0,0.04);
+    }
+    .price{
+        font-size:28px;
+        font-weight:800;
+        color:var(--dark)
+    }
+
+    .btn{
+        padding:12px;
+        border-radius:8px;
+        text-align:center;
+        margin-top:10px;
+        font-weight:600;
+        cursor:pointer;
+    }
+    .btn-call{
+
+        background:#fff;
+        border:1px solid var(--green);color:var(--dark);
+    }
+    .btn-ws{
+        background:var(--green);
+        color:#fff;
+        border:none;
+    }
+
+    .features{
+
+        margin-top:16px;
+        font-size:14px;
+        color:var(--muted);
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+        .container{grid-template-columns:1fr;}
+        .thumbs{flex-direction:row;width:100%;justify-content:center;}
+        .thumbs img{width:70px;height:55px;}
+        .gallery{flex-direction:column;}
+    }
+
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 15px 0;
+    }
+    .topbar .logo1 {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+     /*------------Topbar------------ */
+        .topbar {
+            background: linear-gradient(135deg, #393d52 0%, #9368be 100%);
+            color: white;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .topbar .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .topbar .logo1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .hero-section .logo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+
+        .hero-section .logo1 {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+           /* border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            margin-bottom: 1rem;
+
+        }
+
+
+        .topbar .logo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topbar .text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .topbar .text p {
+            font-size: 13px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .topbar .right-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .topbar .right-info a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .topbar .right-info a:hover {
+            background: white;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .topbar .right-info a i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .topbar .right-info a:hover i {
+            color: #667eea;
+        }
+header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 74px;
+            z-index: 999;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #667eea;
+        }
+
+        header nav a:hover::after {
+            width: 80%;
+        }
+        /* TABS */
+.tabs{
+  display:flex;
+  border-bottom:1px solid #d5e5dd;
+  margin-top:20px;
+}
+.tab{
+  padding:12px 18px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:16px;
+  color:#555;
+}
+.tab.active{
+  border-bottom:3px solid #2f8b57;
+  font-weight:700;
+  color:#0b0b0b;/*helloo*/
+}
+
+.tab-content{
+  padding:18px 5px;
+  display:none;
+  animation:fade .3s;
+}
+
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+.bullet-list li{
+  margin-bottom:8px;
+  list-style:disc;
+  margin-left:20px;
+  color:#0b0b0b;/*  ---*/
+}
+  </style>
+</head>
+
+<body>
+<div class="topbar">
+        <div class="logo-section">
+            <div class="logo1">
+                <img src="images\he_logo3-removebg-preview.png" alt="Harsh Enterprises Logo">
+            </div>
+            <div class="text">
+                <h1>Harsh Enterprises</h1>
+                <p>Trusted Real Estate Partners</p>
+            </div>
+        </div>
+        <div class="right-info">
+            <a href="https://www.facebook.com/share/15KzAWXG4Lb/" title="Facebook"><img src="images\facebook.apng"></a>
+            <a href="https://www.instagram.com/harshenterprises.7979?igsh=MW8wdmYxZTlxMDE1cQ==" title="Instagram"><img src="images\instagram.apng"></a>
+            <a href="https://wa.me/9320658734" title="WhatsApp"><img src="images\whatsapp.apng"></a>
+            <a href="https://www.youtube.com/@HARSHENTERPRISES-z4y" title="YouTube"><img src="images\youtube.apng"></a>
+            <a href="https://maps.app.goo.gl/BYBpLRZqZDM6XDKi6" title="Location"><img src="images\goggle map.apng"></a>
+        </div>
+    </div>
+<!--End Topbar-->
+
+<!--this is a Header-->
+    <header>
+        <nav>
+            <a href="#ready-to-move" class="nav-link">Ready to Move</a>
+            <a href="#top-highlighted" class="nav-link">Top Highlighted</a>
+            <a href="#recommended" class="nav-link">Commercial Property</a>
+            <a href="#Trusted" class="nav-link">Under Construction</a>
+            <a href="#high-demand" class="nav-link">Villas</a>
+        </nav>
+    </header>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- LEFT SIDE -->
+    <section class="left">
+      <div class="gallery">
+        <div class="thumbs" id="thumbs">
+          <img src="images\vedhight.jpeg"
+               data-large="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+               class="active">
+
+          <img src="images\ved-hight.jpeg"
+               data-large="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+          <img src="images\Riviera Bliss"
+               data-large="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+        </div>
+
+        <div class="main-img">
+          <img id="mainImage" src="images\vedhight.jpeg">
+        </div>
+      </div>
+
+      <div class="title-row">
+        <div>
+          <div class="package-title">Rugi-Colony</div>
+          <div class="meta">Information</div>
+        </div>
+        <div class="meta">⭐ 4.7 (95)</div>
+      </div>
+
+     <!--<p style="color:var(--muted);margin-top:10px;line-height:1.5;">
+        and other details 
+      </p>-->
+    </section>
+
+    <!-- RIGHT SIDE BOOKING CARD -->
+    <aside class="book-card">
+
+      <div style="font-size:14px;color:var(--muted)">Contact Us</div>
+      <div style="font-weight:700;margin-bottom:12px;">Harsh Enterprises</div>
+
+      <!--<div class="price">₹18,999</div>
+      <div style="color:var(--muted);font-size:13px;">per person</div>-->
+
+      <div class="btn btn-call" onclick="callNow()">Call Now</div>
+      <div class="btn btn-ws" onclick="openWhatsApp()">Book on WhatsApp</div>
+
+      <div class="features">
+        <div>• 5000+ Happy Customers</div>
+        <div>• Best Price Guarantee</div>
+        <div>• 24/7 Support</div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <script>
+    // Image switch
+    document.getElementById('thumbs').addEventListener('click', function(e){
+      if(e.target.tagName !== 'IMG') return;
+
+      document.querySelectorAll('.thumbs img').forEach(img => img.classList.remove('active'));
+      e.target.classList.add('active');
+
+      document.getElementById('mainImage').src = e.target.dataset.large;
+    });
+
+    function callNow(){
+      window.location.href = "tel:+91 9320658734";
+    }
+
+    function openWhatsApp(){
+      var msg = encodeURIComponent("Hello! I want information about the tour.");
+      window.open("https://wa.me/919320658734?text=" + msg);
+    }
+
+
+
+    function openTab(evt, tabName){
+  var i, content, tablinks;
+
+  content = document.getElementsByClassName("tab-content");
+  for(i=0;i<content.length;i++){
+    content[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tab");
+  for(i=0;i<tablinks.length;i++){
+    tablinks[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+  </script>
+  
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="openTab(event, 'overview')">Overview</button>
+  <button class="tab" onclick="openTab(event, 'itinerary')">Brochure</button>
+  <button class="tab" onclick="openTab(event, 'inclusions')">Flats</button>
+  <button class="tab" onclick="openTab(event, 'reviews')">Images</button>
+</div>
+
+<!-- TAB CONTENT : OVERVIEW -->
+<div id="overview" class="tab-content" style="display:block;">
+  <h3>Rugi-Colony Details</Details></h3>
+  <p>Bigger Spaces, Better Sunsets<br>
+    Experience Spacious Luxury Living & Breathtaking Sunsets View s at Ved Height, Badlapur East<br>
+     Lower Ground + 14th Storey Tower
+  </p>
+
+  <h3>Exclusive Offerings</h3>
+  <ul class="bullet-list">
+    <li> Supersized 1 BHK with Master Bedroom & Sundeck.</li>
+    <li>Supersized 2 BHK with 2 Sundeck & cross ventilation.</li>
+    <li> Exclusive Commercial Opportunity!!
+- High street Retail outlets & office spaces designed for modern Business.</li>
+   <h3>Key Features </h3>
+<li>Prime Location<br>
+- Situated at Heart of Badlapur East unmatched connectivity Badlapur Panvel Highway with easy access to transportation, schools, Hospitals, Grocery’s stores etc.</li>
+    <li>Lifestyle Facilities<br>
+- Elegance Entrance Lobby<br>
+- Hi-speed Elevators with Power Back-up.<br>
+- CCTV Surveillance in common area<br>
+- ⁠AC Fitness Centre<br>
+- ⁠Toddler Play area<br>
+- ⁠Senior Citizen Sitting Area<br>
+- ⁠Gazebo<br>
+- ⁠Mediation Space, yoga Deck<br>
+- ⁠Indoor Games Room<br>
+- ⁠Jogging Track</li>
+<li>Why Invest in Ved Heights?<br>
+🔸 A Perfect blend of Luxury, convenience & sustainability.<br>
+🔸 Ideal for end-users & investors alike, long term value appreciation.<br>
+🔸 Enhanced property value due to planned development & upcoming infrastructure projects like Metro/Highways.<br> 
+
+Don’t miss the opportunity to own a home at Ved Heights. Contact us & schedule a site visit tour or reserve your units –<br> Harsh Enterprises<br>
++919320658734
+<br>MAHA RERA REGD. No. P51700049586</li>
+  </ul>
+</div>
+
+<!-- TAB CONTENT : ITINERARY -->
+<div id="itinerary" class="tab-content">
+  <h3>Detailed Itinerary</h3>
+  <p>Add detailed day-wise itinerary here…</p>
+</div>
+
+<!-- TAB CONTENT : INCLUSIONS -->
+<div id="inclusions" class="tab-content">
+  <h3>Package Inclusions</h3>
+  <ul class="bullet-list">
+    <li>Accommodation</li>
+    <li>Breakfast & Dinner</li>
+    <li>Transfers & Sightseeing</li>
+    <li>Houseboat Stay (if included)</li>
+  </ul>
+</div>
+
+<!-- TAB CONTENT : REVIEWS -->
+<div id="reviews" class="tab-content">
+  <h3>Customer Reviews</h3>
+  <p>Reviews will appear here…</p>
+</div>
+
+</body>
+</html>

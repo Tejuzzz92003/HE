@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harsh Enterprises </title>
+
+  <style>
+    :root{
+      --green:#2f8b57;
+      --dark:#14453a;
+      --muted:#6b7b78;
+      --card:#ffffff;
+      --bg:#f4f7f6;
+      font-family: 'Segoe UI', Roboto, Arial;
+    
+    }
+    body{
+        margin:0;
+        background:var(--bg);
+        color:#1b2b2a
+    }
+
+    
+    /* MAIN LAYOUT */
+    .container{
+        max-width:1200px;
+        margin:28px auto;
+        display:grid;
+        grid-template-columns:1fr 380px;
+        gap:22px;
+        padding:0 18px;
+    }
+
+    /* LEFT SECTION 
+    .left{
+        background:var(--card);
+        padding:18px;
+        border-radius:10px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.05);
+    }*/
+
+    .gallery{
+        display:flex;
+        gap:18px;
+    }
+    .thumbs{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+        width:90px;
+    }
+    .thumbs img{
+        width:90px;
+        height:70px;
+        object-fit:cover;
+        border-radius:6px;
+        cursor:pointer;border:2px solid transparent;
+    }
+    .thumbs img.active{
+        border-color:var(--green)}
+
+    .main-img{
+        flex:1;
+        border-radius:10px;
+        overflow:hidden;
+    }
+    .main-img img{
+        width:100%;
+        max-height:520px;
+        object-fit:cover;
+    }
+
+    .title-row{
+        margin-top:14px;
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .package-title{
+        font-size:24px;
+        font-weight:700
+    }
+    .meta{
+        font-size:14px;
+        color:var(--muted)}
+
+    /* RIGHT - BOOKING CARD */
+    .book-card{
+        background:#fff;
+        border-radius:10px;
+        padding:18px;
+        border:1px solid #e2ece9;
+        box-shadow:0 6px 18px rgba(0,0,0,0.04);
+        position:sticky;
+         top:120px;
+    }
+    .price{
+        font-size:28px;
+        font-weight:800;
+        color:var(--dark)
+    }
+
+    .btn{
+        padding:12px;
+        border-radius:8px;
+        text-align:center;
+        margin-top:10px;
+        font-weight:600;
+        cursor:pointer;
+    }
+    .btn-call{
+
+        background:#fff;
+        border:1px solid var(--green);color:var(--dark);
+    }
+    .btn-ws{
+        background:var(--green);
+        color:#fff;
+        border:none;
+    }
+
+    .features{
+
+        margin-top:16px;
+        font-size:14px;
+        color:var(--muted);
+        display:flex;
+        flex-direction:column;
+        gap:8px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+        .container{grid-template-columns:1fr;}
+        .thumbs{flex-direction:row;width:100%;justify-content:center;}
+        .thumbs img{width:70px;height:55px;}
+        .gallery{flex-direction:column;}
+    }
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 15px 0;
+    }
+    .topbar .logo1 {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+     /*------------Topbar------------ */
+        .topbar {
+            background: linear-gradient(135deg, #393d52 0%, #9368be 100%);
+            color: white;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .topbar .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .topbar .logo1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .hero-section .logo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+
+        .hero-section .logo1 {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+           /* border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            margin-bottom: 1rem;
+
+        }
+
+
+        .topbar .logo1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topbar .text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .topbar .text p {
+            font-size: 13px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .topbar .right-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .topbar .right-info a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .topbar .right-info a:hover {
+            background: white;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .topbar .right-info a i {
+            color: white;
+            font-size: 18px;
+        }
+
+        .topbar .right-info a:hover i {
+            color: #667eea;
+        }
+header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 74px;
+            z-index: 999;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #667eea;
+        }
+
+        header nav a:hover::after {
+            width: 80%;
+        }
+        /* TABS */
+.tabs{
+  display:flex;
+  border-bottom:1px solid #d5e5dd;
+  margin-top:20px;
+}
+.tab{
+  padding:12px 18px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:16px;
+  color:#555;
+}
+.tab.active{
+  border-bottom:3px solid #2f8b57;
+  font-weight:700;
+  color:#0b0b0b;/*helloo*/
+}
+
+.tab-content{
+  padding:50px 50px;
+  display:none;
+  animation:fade .3s;
+}
+
+@keyframes fade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+.tab-content img{
+    height:6in;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left:3%;
+}
+/*.bullet-list li{
+  margin-bottom:8px;
+  list-style:disc;
+  margin-left:20px;
+  color:#0b0b0b;
+}*/
+
+/* FINAL MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        flex-direction:column;
+    }
+
+    .thumbs{
+        flex-direction:row;
+        width:100%;
+        justify-content:center;
+    }
+
+    .thumbs img{
+        width:70px;
+        height:55px;
+    }
+
+    .main-img img{
+        max-height:300px;
+    }
+
+    .book-card{
+        position:static;
+        margin-top:20px;
+    }
+
+    .tabs{
+        overflow-x:auto;
+    }
+
+    .tab{
+        white-space:nowrap;
+        font-size:14px;
+    }
+
+    .tab-content{
+        padding:20px;
+    }
+
+    .tab-content img{
+        width:100%;
+        height:auto;
+        border-radius:10px;
+        margin-bottom:15px;
+    }
+
+    .title-row{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+        padding:15px 0;
+    }
+
+    .topbar .logo1{
+        width:40px;
+        height:40px;
+    }
+
+    header nav{
+        gap:15px;
+    }
+
+    header nav a{
+        font-size:12px;
+        padding:6px 12px;
+    }
+
+}
+  </style>
+</head>
+
+<body>
+<div class="topbar">
+        <div class="logo-section">
+            <div class="logo1">
+                <img src="images/he_logo3-removebg-preview.png" alt="Harsh Enterprises Logo">
+            </div>
+            <div class="text">
+                <h1>Harsh Enterprises</h1>
+                <p>Trusted Real Estate Partners</p>
+            </div>
+        </div>
+        <div class="right-info">
+            <a href="https://www.facebook.com/share/15KzAWXG4Lb/" title="Facebook"><img src="images/facebook.apng"></a>
+            <a href="https://www.instagram.com/harshenterprises.7979?igsh=MW8wdmYxZTlxMDE1cQ==" title="Instagram"><img src="images/instagram.apng"></a>
+            <a href="https://wa.me/9320658734" title="WhatsApp"><img src="images/whatsapp.apng"></a>
+            <a href="https://www.youtube.com/@HARSHENTERPRISES-z4y" title="YouTube"><img src="images/youtube.apng"></a>
+            <a href="https://maps.app.goo.gl/BYBpLRZqZDM6XDKi6" title="Location"><img src="images/goggle map.apng"></a>
+        </div>
+    </div>
+<!--End Topbar-->
+
+<!--this is a Header-->
+    <header>
+        <nav>
+            <a href="index.html" class="nav-link">Ready to Move</a>
+            <a href="index.html" class="nav-link">Top Highlighted</a>
+            <a href="index.html" class="nav-link">Commercial Property</a>
+            <a href="index.html" class="nav-link">Under Construction</a>
+            <a href="index.html" class="nav-link">Villas</a>
+        </nav>
+    </header>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- LEFT SIDE -->
+    <section class="left">
+      <div class="gallery">
+        <div class="thumbs" id="thumbs">
+          <img src="images/palm f2.jpg"
+               data-large="images/palm f2.jpg"
+               class="active">
+
+          <img src="images/palm f3.jpg"
+               data-large="images/palm f3.jpg">
+
+          <img src="images/palm f6.jpg"
+               data-large="images/palm f6.jpg">
+        </div>
+
+        <div class="main-img">
+          <img id="mainImage" src="images/palm f5.jpg">
+        </div>
+      </div>
+
+      <div class="title-row">
+        <div>
+          <div class="package-title">Palm Hills</div>
+          <div class="meta">Information</div>
+        </div>
+        <div class="meta">⭐ 4.7 (95)</div>
+      </div>
+
+     <!--<p style="color:var(--muted);margin-top:10px;line-height:1.5;">
+        and other details 
+      </p>-->
+    </section>
+
+    <!-- RIGHT SIDE BOOKING CARD -->
+    <aside class="book-card">
+
+      <div style="font-size:14px;color:var(--muted)">Contact Us</div>
+      <div style="font-weight:700;margin-bottom:12px;">Harsh Enterprises</div>
+
+      <!--<div class="price">₹18,999</div>
+      <div style="color:var(--muted);font-size:13px;">per person</div>-->
+
+      <div class="btn btn-call" onclick="callNow()">Call Now</div>
+      <div class="btn btn-ws" onclick="openWhatsApp()">Book on WhatsApp</div>
+
+      <div class="features">
+        <div>• 5000+ Happy Customers</div>
+        <div>• Best Price Guarantee</div>
+        <div>• 24/7 Support</div>
+      </div>
+
+    </aside>
+
+</main>
+  
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="openTab(event, 'overview')">Overview</button>
+  <button class="tab" onclick="openTab(event, 'itinerary')">Brochure</button>
+  <button class="tab" onclick="openTab(event, 'inclusions')">Flat Images</button>
+  <button class="tab" onclick="openTab(event, 'reviews')">Video</button>
+</div>
+
+<!-- TAB CONTENT : OVERVIEW -->
+<div id="overview" class="tab-content" style="display:block;">
+  <h3>Palm Hills Details</h3>
+  <p>
+Palm Hills offers premium 1RK, 1BHK, 2BHK & 3BHK Villas 
+with modern amenities, spacious rooms and peaceful surroundings.
+<br>
+✔ Luxury Lifestyle <br> 
+✔ Prime Location  <br>
+✔ Modern Amenities <br> 
+✔ Spacious Parking <br> 
+✔ Garden & Kids Play Area <br> 
+
+For More Information Contact:<br>
+
+Jitesh Jadhav  <br>
+Harsh Enterprises <br> 
+📞 +91 9320658734<br>
+</p>
+  
+</div>
+
+<!-- TAB CONTENT : ITINERARY -->
+<div id="itinerary" class="tab-content">
+  <h3>Brochure</h3>
+  <p>Coming Soon...</p>
+
+  
+</div>
+
+<!-- TAB CONTENT : INCLUSIONS -->
+<div id="inclusions" class="tab-content">
+   <img src="images/palm f1.jpg"><br>
+   <img src="images/palm f2.jpg"><br>
+   <img src="images/palm f3.jpg"><br>
+   <img src="images/palm f4.jpg"><br>
+   <img src="images/palm f5.jpg"><br>
+   <img src="images/palm f6.jpg"><br>
+   <img src="images/palm f7.jpg"><br>
+   <img src="images/palm f8.jpg"><br>
+   <img src="images/palm f9.jpg"><br>
+</div>
+
+<!-- TAB CONTENT : REVIEWS -->
+<div id="reviews" class="tab-content">
+  <h3>Flat Video <video src=""></video></h3>
+  <p>Coming Soon...</p>
+</div>
+
+<script>
+    // Image switch
+    document.getElementById('thumbs').addEventListener('click', function(e){
+      if(e.target.tagName !== 'IMG') return;
+
+      document.querySelectorAll('.thumbs img').forEach(img => img.classList.remove('active'));
+      e.target.classList.add('active');
+
+      document.getElementById('mainImage').src = e.target.dataset.large;
+    });
+
+    function callNow(){
+      window.location.href = "tel:+91 9320658734";
+    }
+
+    function openWhatsApp(){
+      var msg = encodeURIComponent("Hello! I want information about the Property.");
+      window.open("https://wa.me/919320658734?text=" + msg);
+    }
+
+
+
+    function openTab(evt, tabName){
+  var i, content, tablinks;
+
+  content = document.getElementsByClassName("tab-content");
+  for(i=0;i<content.length;i++){
+    content[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tab");
+  for(i=0;i<tablinks.length;i++){
+    tablinks[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+  </script>
+</body>
+</html>
