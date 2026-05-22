@@ -45,6 +45,8 @@ body{
     z-index:1000;
     box-shadow:0 2px 10px rgba(0,0,0,0.1);
     backdrop-filter:blur(10px);
+    width:100%;
+overflow:hidden;
 }
 
 .topbar .logo-section{
@@ -160,7 +162,6 @@ header nav a:hover::after{
    HERO SECTION
 ========================= */
 
-
 .hero-section{
     position:relative;
     height:100vh;
@@ -173,7 +174,6 @@ header nav a:hover::after{
     color:white;
     overflow:hidden;
 }
-
 
 .bg-video{
     position:absolute;
@@ -597,4 +597,9 @@ footer a{
         font-size:14px;
     }
 
+}
+.topbar .right-info{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
 }
